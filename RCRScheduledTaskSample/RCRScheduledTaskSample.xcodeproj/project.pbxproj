@@ -12,9 +12,9 @@
 		67DD794D19B8709000992844 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD794C19B8709000992844 /* ViewController.m */; };
 		67DD795019B8709000992844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DD794E19B8709000992844 /* Main.storyboard */; };
 		67DD795219B8709000992844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DD795119B8709000992844 /* Images.xcassets */; };
-		67DD795E19B8709000992844 /* RCRScheduledTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD795D19B8709000992844 /* RCRScheduledTaskTests.m */; };
 		67DD796C19B870CC00992844 /* RCRScheduledTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796919B870CC00992844 /* RCRScheduledTask.m */; };
 		67DD796D19B870CC00992844 /* RCRScheduleStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */; };
+		67DD796F19B87DF200992844 /* RCRScheduleStringParserTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +39,11 @@
 		67DD795119B8709000992844 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		67DD795719B8709000992844 /* RCRScheduledTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCRScheduledTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DD795C19B8709000992844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67DD795D19B8709000992844 /* RCRScheduledTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRScheduledTaskTests.m; sourceTree = "<group>"; };
 		67DD796819B870CC00992844 /* RCRScheduledTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRScheduledTask.h; sourceTree = "<group>"; };
 		67DD796919B870CC00992844 /* RCRScheduledTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduledTask.m; sourceTree = "<group>"; };
 		67DD796A19B870CC00992844 /* RCRScheduleStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRScheduleStringParser.h; sourceTree = "<group>"; };
 		67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduleStringParser.m; sourceTree = "<group>"; };
+		67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduleStringParserTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 		67DD795A19B8709000992844 /* RCRScheduledTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				67DD795D19B8709000992844 /* RCRScheduledTaskTests.m */,
 				67DD795B19B8709000992844 /* Supporting Files */,
+				67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */,
 			);
 			path = RCRScheduledTaskTests;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67DD795E19B8709000992844 /* RCRScheduledTaskTests.m in Sources */,
+				67DD796F19B87DF200992844 /* RCRScheduleStringParserTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
