@@ -19,6 +19,8 @@ static NSInteger const MinutesInAnHour = 60;
 
 @implementation RCRScheduleStringParserTestCase
 
+#pragma mark - Tests for */ based strings
+
 - (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString1 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
     
@@ -63,7 +65,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/20"]);
 }
 
-- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString5{
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString5 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
     
     // */ schedules always include minute 0
@@ -74,7 +76,29 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/30"]);
 }
 
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString1 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString6 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    // */ schedules always include minute 0
+    NSArray *expectedValues = @[@(0), @(30)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"* /30"]);
+}
+
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString7 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    // */ schedules always include minute 0
+    NSArray *expectedValues = @[@(0), @(30)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@" * / 30 "]);
+}
+
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString8 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
 
     NSOrderedSet *expected = [NSOrderedSet orderedSet];
@@ -82,7 +106,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/0"], @"*/0 should result in an empty set");
 }
 
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString2 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString9 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
     
     NSMutableArray *expectedValues = [NSMutableArray arrayWithCapacity:MinutesInAnHour];
@@ -95,7 +119,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/1"]);
 }
 
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString3 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString10 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
 
     // */ schedules always include minute 0
@@ -106,7 +130,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/27"]);
 }
 
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString4 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString11 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
     
     // */ schedules always include minute 0
@@ -117,7 +141,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/45"]);
 }
 
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString5 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString12 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
     
     // */ schedules always include minute 0
@@ -128,7 +152,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/59"]);
 }
 
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString6 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString13 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
 
     // */ schedules always include minute 0 - UNLESS the format string makes no sense (in this case 60 is too high)
@@ -139,7 +163,7 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/60"]);
 }
     
-- (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString7 {
+- (void)testMinutesFromScheduleStringWithTypicalAsteriskSlashBasedString14 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
     
     // */ schedules always include minute 0 - UNLESS the format string makes no sense (in this case 1000 is far too high)
@@ -149,6 +173,8 @@ static NSInteger const MinutesInAnHour = 60;
     
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/1000"]);
 }
+
+#pragma mark - Tests for * based strings
 
 - (void)testMinutesFromScheduleStringWithAsteriskBasedString {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
@@ -163,9 +189,69 @@ static NSInteger const MinutesInAnHour = 60;
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*"]);
 }
 
-- (void)testMinutesFromScheduleStringWithCommaBasedString {
-    //    - (NSOrderedSet *)minutesFromScheduleString:(NSString *)scheduleString;
+#pragma mark - Tests for comma based strings
+
+- (void)testMinutesFromScheduleStringWithCommaBasedString1 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(1)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"1,"]);
 }
+
+- (void)testMinutesFromScheduleStringWithCommaBasedString2 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(1)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@",1"]);
+}
+
+- (void)testMinutesFromScheduleStringWithCommaBasedString3 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(0), @(10), @(30), @(45)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"0,10,30,45"]);
+}
+
+- (void)testMinutesFromScheduleStringWithCommaBasedString4 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(0), @(10), @(30), @(45)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@" 0,  10,   30, 45   "]);
+}
+
+- (void)testMinutesFromScheduleStringWithCommaBasedString5 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(0), @(10), @(20), @(30), @(40), @(50)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"0,10,20,30,40,50"]);
+}
+
+- (void)testMinutesFromScheduleStringWithCommaBasedString6 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(0), @(10), @(20), @(30), @(40), @(50)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@" 0  ,10, 20,30  ,40 , 50, 60  "]);
+}
+
+#pragma mark - Tests for single number based strings
 
 - (void)testMinutesFromScheduleStringWithSingleNumberBasedString1 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
@@ -195,6 +281,46 @@ static NSInteger const MinutesInAnHour = 60;
     NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
     
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"45"]);
+}
+
+- (void)testMinutesFromScheduleStringWithSingleNumberBasedString4 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[@(59)];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"59"]);
+}
+
+- (void)testMinutesFromScheduleStringWithSingleNumberBasedString5 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"60"]);
+}
+
+- (void)testMinutesFromScheduleStringWithSingleNumberBasedString6 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"100"]);
+}
+
+- (void)testMinutesFromScheduleStringWithSingleNumberBasedString7 {
+    RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+    
+    NSArray *expectedValues = @[];
+    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+    
+    XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"-1"]);
 }
 
 @end

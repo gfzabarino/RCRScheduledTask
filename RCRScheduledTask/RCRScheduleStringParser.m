@@ -95,7 +95,14 @@ static NSInteger const MinutesInAnHour = 60;
 }
 
 - (NSOrderedSet *)parseSingleNumberBasedScheduleString:(NSString *)scheduleString {
-    return [NSOrderedSet orderedSetWithObject:[self minuteNumberFromString:scheduleString]];
+    NSNumber *minute = [self minuteNumberFromString:scheduleString];
+    
+    if (minute) {
+        return [NSOrderedSet orderedSetWithObject:minute];
+    }
+    else {
+        return [NSOrderedSet orderedSet];
+    }
 }
 
 #pragma mark - Basic string-number parsing
