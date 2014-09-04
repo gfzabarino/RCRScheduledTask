@@ -16,13 +16,13 @@ static NSInteger const MinutesInAnHour = 60;
     
     // The ordering of the following IFs is important to ensure we parse the schedule string correctly
     
-    if ([sanitizedString containsString:@"*/"]) {
+    if ([sanitizedString rangeOfString:@"*/"].location != NSNotFound) {
         return [self parseAsteriskSlashBasedScheduleString:sanitizedString];
     }
-    else if ([sanitizedString containsString:@"*"]) {
+    else if ([sanitizedString rangeOfString:@"*"].location != NSNotFound) {
         return [self parseAsteriskBasedScheduleString:sanitizedString];
     }
-    else if ([sanitizedString containsString:@","]) {
+    else if ([sanitizedString rangeOfString:@","].location != NSNotFound) {
         return [self parseCommaBasedScheduleString:sanitizedString];
     }
     else {
