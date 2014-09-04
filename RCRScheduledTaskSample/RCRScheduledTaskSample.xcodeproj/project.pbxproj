@@ -12,7 +12,7 @@
 		67DD794D19B8709000992844 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD794C19B8709000992844 /* ViewController.m */; };
 		67DD795019B8709000992844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DD794E19B8709000992844 /* Main.storyboard */; };
 		67DD795219B8709000992844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DD795119B8709000992844 /* Images.xcassets */; };
-		67DD795E19B8709000992844 /* RCRScheduledTaskSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD795D19B8709000992844 /* RCRScheduledTaskSampleTests.m */; };
+		67DD795E19B8709000992844 /* RCRScheduledTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD795D19B8709000992844 /* RCRScheduledTaskTests.m */; };
 		67DD796C19B870CC00992844 /* RCRScheduledTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796919B870CC00992844 /* RCRScheduledTask.m */; };
 		67DD796D19B870CC00992844 /* RCRScheduleStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */; };
 /* End PBXBuildFile section */
@@ -37,9 +37,9 @@
 		67DD794C19B8709000992844 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		67DD794F19B8709000992844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67DD795119B8709000992844 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		67DD795719B8709000992844 /* RCRScheduledTaskSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCRScheduledTaskSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67DD795719B8709000992844 /* RCRScheduledTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCRScheduledTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DD795C19B8709000992844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67DD795D19B8709000992844 /* RCRScheduledTaskSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRScheduledTaskSampleTests.m; sourceTree = "<group>"; };
+		67DD795D19B8709000992844 /* RCRScheduledTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRScheduledTaskTests.m; sourceTree = "<group>"; };
 		67DD796819B870CC00992844 /* RCRScheduledTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRScheduledTask.h; sourceTree = "<group>"; };
 		67DD796919B870CC00992844 /* RCRScheduledTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduledTask.m; sourceTree = "<group>"; };
 		67DD796A19B870CC00992844 /* RCRScheduleStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRScheduleStringParser.h; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			children = (
 				67DD796719B870CC00992844 /* RCRScheduledTask */,
 				67DD794319B8709000992844 /* RCRScheduledTaskSample */,
-				67DD795A19B8709000992844 /* RCRScheduledTaskSampleTests */,
+				67DD795A19B8709000992844 /* RCRScheduledTaskTests */,
 				67DD794219B8709000992844 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				67DD794119B8709000992844 /* RCRScheduledTaskSample.app */,
-				67DD795719B8709000992844 /* RCRScheduledTaskSampleTests.xctest */,
+				67DD795719B8709000992844 /* RCRScheduledTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,13 +106,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		67DD795A19B8709000992844 /* RCRScheduledTaskSampleTests */ = {
+		67DD795A19B8709000992844 /* RCRScheduledTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				67DD795D19B8709000992844 /* RCRScheduledTaskSampleTests.m */,
+				67DD795D19B8709000992844 /* RCRScheduledTaskTests.m */,
 				67DD795B19B8709000992844 /* Supporting Files */,
 			);
-			path = RCRScheduledTaskSampleTests;
+			path = RCRScheduledTaskTests;
 			sourceTree = "<group>";
 		};
 		67DD795B19B8709000992844 /* Supporting Files */ = {
@@ -155,9 +155,9 @@
 			productReference = 67DD794119B8709000992844 /* RCRScheduledTaskSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		67DD795619B8709000992844 /* RCRScheduledTaskSampleTests */ = {
+		67DD795619B8709000992844 /* RCRScheduledTaskTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67DD796419B8709000992844 /* Build configuration list for PBXNativeTarget "RCRScheduledTaskSampleTests" */;
+			buildConfigurationList = 67DD796419B8709000992844 /* Build configuration list for PBXNativeTarget "RCRScheduledTaskTests" */;
 			buildPhases = (
 				67DD795319B8709000992844 /* Sources */,
 				67DD795419B8709000992844 /* Frameworks */,
@@ -168,9 +168,9 @@
 			dependencies = (
 				67DD795919B8709000992844 /* PBXTargetDependency */,
 			);
-			name = RCRScheduledTaskSampleTests;
+			name = RCRScheduledTaskTests;
 			productName = RCRScheduledTaskSampleTests;
-			productReference = 67DD795719B8709000992844 /* RCRScheduledTaskSampleTests.xctest */;
+			productReference = 67DD795719B8709000992844 /* RCRScheduledTaskTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +205,7 @@
 			projectRoot = "";
 			targets = (
 				67DD794019B8709000992844 /* RCRScheduledTaskSample */,
-				67DD795619B8709000992844 /* RCRScheduledTaskSampleTests */,
+				67DD795619B8709000992844 /* RCRScheduledTaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67DD795E19B8709000992844 /* RCRScheduledTaskSampleTests.m in Sources */,
+				67DD795E19B8709000992844 /* RCRScheduledTaskTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -342,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -384,7 +384,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RCRScheduledTaskSampleTests/Info.plist;
+				INFOPLIST_FILE = RCRScheduledTaskTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCRScheduledTaskSample.app/RCRScheduledTaskSample";
@@ -399,7 +399,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RCRScheduledTaskSampleTests/Info.plist;
+				INFOPLIST_FILE = RCRScheduledTaskTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCRScheduledTaskSample.app/RCRScheduledTaskSample";
@@ -425,14 +425,16 @@
 				67DD796319B8709000992844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		67DD796419B8709000992844 /* Build configuration list for PBXNativeTarget "RCRScheduledTaskSampleTests" */ = {
+		67DD796419B8709000992844 /* Build configuration list for PBXNativeTarget "RCRScheduledTaskTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67DD796519B8709000992844 /* Debug */,
 				67DD796619B8709000992844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
