@@ -41,9 +41,9 @@ In this case we’re using a schedule string of `*` (which means ‘run every mi
 
 Some additional examples of schedule strings are listed below:
 
-- Every 5 minutes (from the start of the hour): `*/5`
-- At minutes 0, 5, 10, and 15: `0,5,10,15`
-- At minute 5: `5`
+- Every 5 minutes (including and from the start of every hour): `*/5`
+- At minutes 0, 5, 10, and 15 of every hour: `0,5,10,15`
+- At minute 5 of every hour: `5`
 
 (Where 0, 5, 10 and 15 are arbitrary minute numbers.)
 
