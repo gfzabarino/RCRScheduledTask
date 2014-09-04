@@ -3,6 +3,8 @@ RCRScheduledTask
 
 A simple facility for running scheduled, repeating tasks within an iOS app using cron-like strings for minutes.
 
+Note that scheduled tasks only execute while your app is running in the foreground.
+
 ## What it Depends on
 
 `RCRScheduledTask` depends on Xcode 6 and higher and has been tested with iOS 7 and iOS 8.
@@ -34,6 +36,18 @@ self.scheduledTask = [RCRScheduledTask scheduledTaskWithScheduleString:@"*" bloc
     NSLog(@"I’m a scheduled task! I run every minute");
 }];
 ```
+
+In this case we’re using a schedule string of `*` (which means ‘run every minute’) and we’re simply logging a message using `NSLog()`.
+
+Some additional examples of schedule strings are listed below:
+
+- Every 5 minutes (from the start of the hour): `*/5`
+- At minutes 0, 5, 10, and 15: `0,5,10,15`
+- At minute 5: `5`
+
+(Where 0, 5, 10 and 15 are arbitrary minute numbers.)
+
+Further examples of schedule strings and full documentation comments can be found in the sample project.
 
 ## Sample Project
 
