@@ -68,9 +68,12 @@
 
 - (void)testMinutesFromScheduleStringWithUnusualAsteriskSlashBasedString5 {
     RCRScheduleStringParser *parser = [[RCRScheduleStringParser alloc] init];
+
+    // */ schedules always include minute 0
+    NSArray *expectedValues = @[@(0)];
     
-    NSOrderedSet *expected = [NSOrderedSet orderedSet];
-    
+    NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:expectedValues];
+
     XCTAssertEqualObjects(expected, [parser minutesFromScheduleString:@"*/60"]);
 }
     

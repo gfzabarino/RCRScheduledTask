@@ -54,6 +54,8 @@ static NSInteger const MinutesInAnHour = 60;
         // If minuteInterval is zero then we do nothing
         if (minuteIntervalInteger > 0) {
             for (NSInteger minute = 0; minute < MinutesInAnHour; minute++) {
+                
+                // Note that the following will always be true for minute 0, so "*/" schedules always include minute 0
                 if (minute % minuteIntervalInteger == 0) {
                     [minutes addObject:@(minute)];
                 }
