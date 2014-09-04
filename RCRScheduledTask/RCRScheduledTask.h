@@ -41,7 +41,7 @@
 
  Run every minute: <tt>*</tt>
 
- Note that there is a difference in behaviour in the case of "* /" schedule strings
+ Note that there is a difference in behaviour in the case of <tt>"* /"</tt> schedule strings
 
  Also note that no special checking for invalid syntax is catered for, and that only string syntaxes as illustrated above are catered for (see <tt>RCRScheduleStringParser</tt> for more details). Invalid strings will result in the task running with the wrong schedule, or not running at all.
  

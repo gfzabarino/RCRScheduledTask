@@ -31,8 +31,7 @@ static NSTimeInterval const SecondsInAMinute = 60.0;
         
         _minutesOnWhichToExecute = [[[RCRScheduleStringParser alloc] init] minutesFromScheduleString:scheduleString];
         _lastExecuted = nil;
-        
-        
+                
         // Next we configure our timer, telling it to first run at the beginning of the next minute, and then every 60 seconds thereafter
         _timer = [[NSTimer alloc] initWithFireDate:[self startOfNextMinute] interval:SecondsInAMinute target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
 
