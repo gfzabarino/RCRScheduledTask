@@ -44,14 +44,14 @@ static NSInteger const MinutesInAnHour = 60;
     
     NSString *minuteIntervalString = [scheduleString stringByReplacingOccurrencesOfString:@"*/" withString:@""];
     
-    NSNumber *minuteInterval = [self numberFromString:minuteIntervalString];
+    NSNumber *minuteInterval = [self minuteNumberFromString:minuteIntervalString];
     
     NSMutableArray *minutes = [[NSMutableArray alloc] init];
     
     if (minuteInterval) {
         NSInteger minuteIntervalInteger = [minuteInterval integerValue];
         
-        // If minuteInterval is zero then we do nothing
+        // If minuteInterval is zero then we do nothing, as to do something "every 0 minutes" makes no sense
         if (minuteIntervalInteger > 0) {
             for (NSInteger minute = 0; minute < MinutesInAnHour; minute++) {
                 
@@ -84,7 +84,7 @@ static NSInteger const MinutesInAnHour = 60;
     NSMutableArray *minutes = [[NSMutableArray alloc] initWithCapacity:[minuteStrings count]];
     
     for (NSString *minuteString in minuteStrings) {
-        NSNumber *minute = [self numberFromString:minuteString];
+        NSNumber *minute = [self minuteNumberFromString:minuteString];
         
         if (minute) {
             [minutes addObject:minute];
@@ -95,20 +95,30 @@ static NSInteger const MinutesInAnHour = 60;
 }
 
 - (NSOrderedSet *)parseSingleNumberBasedScheduleString:(NSString *)scheduleString {
-    return [NSOrderedSet orderedSetWithObject:[self numberFromString:scheduleString]];
+    return [NSOrderedSet orderedSetWithObject:[self minuteNumberFromString:scheduleString]];
 }
 
 #pragma mark - Basic string-number parsing
 
-- (NSNumber *)numberFromString:(NSString *)string {
+- (NSNumber *)minuteNumberFromString:(NSString *)string {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
 
     // We'll get nil if we don't have a valid number, which is what we want (unlike NSString's integerValue method, which returns 0)
-    NSNumber *number = [numberFormatter numberFromString:string];
+    NSNumber *parsedNumber = [numberFormatter numberFromString:string];
     
-    // We want this class to ignore negative numbers, so we explicitly test for this and return nil
-    return (number && [number integerValue] < 0) ? nil : number;
+    // We want this class to ignore negative numbers and also ignore numbers greater than 59, so we explicitly test for this and return nil
+    NSNumber *number = nil;
+    
+    if (parsedNumber) {
+        NSInteger parsedInteger = [parsedNumber integerValue];
+        
+        if (parsedInteger >= 0 && parsedInteger < MinutesInAnHour) {
+            number = parsedNumber;
+        }
+    }
+    
+    return number;
 }
 
 @end
