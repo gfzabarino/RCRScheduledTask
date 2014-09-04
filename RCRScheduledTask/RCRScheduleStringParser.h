@@ -19,7 +19,7 @@
 
  Every minute: <tt>*</tt>
 
- Every 5 mintues (from the start of the hour): <tt>* /5</tt>
+ Every 5 minutes (from the start of the hour): <tt>* /5</tt>
 
  At minutes 0, 5, 10, and 15: <tt>0,5,10,15</tt>
 
