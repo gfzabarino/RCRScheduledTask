@@ -78,7 +78,6 @@ static NSTimeInterval const SecondsInAMinute = 60.0;
 }
 
 - (NSDate *)startOfNextMinute {
-    
     NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval startOfCurrentMinute = timestamp - fmod(timestamp, 60);
     NSTimeInterval startOfNextMinute = startOfCurrentMinute + 60;
