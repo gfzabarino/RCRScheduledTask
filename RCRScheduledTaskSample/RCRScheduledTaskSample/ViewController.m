@@ -61,6 +61,9 @@
         
         [self.logTextView scrollRangeToVisible:NSMakeRange([self.logTextView.text length], 0)];
     });
+    
+    // We also log the text using NSLog
+    NSLog(@"%@", text);
 }
 
 @end
