@@ -15,7 +15,7 @@
 		67DD796C19B870CC00992844 /* RCRScheduledTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796919B870CC00992844 /* RCRScheduledTask.m */; };
 		67DD796D19B870CC00992844 /* RCRScheduleStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */; };
 		67DD796F19B87DF200992844 /* RCRScheduleStringParserTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */; };
-		67DD797219B8FA5A00992844 /* RCRMinutesAndSecondsUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD797119B8FA5A00992844 /* RCRMinutesAndSecondsUtility.m */; };
+		67DD797219B8FA5A00992844 /* RCRMinutesUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD797119B8FA5A00992844 /* RCRMinutesUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,8 @@
 		67DD796A19B870CC00992844 /* RCRScheduleStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRScheduleStringParser.h; sourceTree = "<group>"; };
 		67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduleStringParser.m; sourceTree = "<group>"; };
 		67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduleStringParserTestCase.m; sourceTree = "<group>"; };
-		67DD797019B8FA5A00992844 /* RCRMinutesAndSecondsUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRMinutesAndSecondsUtility.h; sourceTree = "<group>"; };
-		67DD797119B8FA5A00992844 /* RCRMinutesAndSecondsUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRMinutesAndSecondsUtility.m; sourceTree = "<group>"; };
+		67DD797019B8FA5A00992844 /* RCRMinutesUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRMinutesUtility.h; sourceTree = "<group>"; };
+		67DD797119B8FA5A00992844 /* RCRMinutesUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRMinutesUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +133,8 @@
 				67DD796919B870CC00992844 /* RCRScheduledTask.m */,
 				67DD796A19B870CC00992844 /* RCRScheduleStringParser.h */,
 				67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */,
-				67DD797019B8FA5A00992844 /* RCRMinutesAndSecondsUtility.h */,
-				67DD797119B8FA5A00992844 /* RCRMinutesAndSecondsUtility.m */,
+				67DD797019B8FA5A00992844 /* RCRMinutesUtility.h */,
+				67DD797119B8FA5A00992844 /* RCRMinutesUtility.m */,
 			);
 			name = RCRScheduledTask;
 			path = ../RCRScheduledTask;
@@ -243,7 +243,7 @@
 				67DD794D19B8709000992844 /* ViewController.m in Sources */,
 				67DD794A19B8709000992844 /* AppDelegate.m in Sources */,
 				67DD794719B8709000992844 /* main.m in Sources */,
-				67DD797219B8FA5A00992844 /* RCRMinutesAndSecondsUtility.m in Sources */,
+				67DD797219B8FA5A00992844 /* RCRMinutesUtility.m in Sources */,
 				67DD796D19B870CC00992844 /* RCRScheduleStringParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

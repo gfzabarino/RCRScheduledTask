@@ -7,7 +7,7 @@
 
 #import "RCRScheduledTask.h"
 #import "RCRScheduleStringParser.h"
-#import "RCRMinutesAndSecondsUtility.h"
+#import "RCRMinutesUtility.h"
 
 @interface RCRScheduledTask ()
 
@@ -15,7 +15,7 @@
 
 @property (nonatomic, copy) NSOrderedSet *minutesOnWhichToExecute;
 
-@property (nonatomic, strong) RCRMinutesAndSecondsUtility *minutesAndSecondsUtility;
+@property (nonatomic, strong) RCRMinutesUtility *minutesUtility;
 
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -33,10 +33,10 @@
         _minutesOnWhichToExecute = [[[RCRScheduleStringParser alloc] init] minutesFromScheduleString:scheduleString];
         _lastExecuted = nil;
 
-        _minutesAndSecondsUtility = [[RCRMinutesAndSecondsUtility alloc] init];
+        _minutesUtility = [[RCRMinutesUtility alloc] init];
         
         // Next we configure our timer, telling it to first run at the beginning of the next minute, and then every 60 seconds thereafter
-        _timer = [[NSTimer alloc] initWithFireDate:[_minutesAndSecondsUtility startOfNextMinute] interval:(NSTimeInterval)SecondsInAMinute target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        _timer = [[NSTimer alloc] initWithFireDate:[_minutesUtility dateAtStartOfNextMinute] interval:SecondsInAMinute target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
 
         // Now we start the timer by adding it to the current runloop in the default mode (this is what the scheduledTimerWithTimeInterval: convenience methods of NSTimer do)
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
@@ -62,7 +62,7 @@
 #pragma mark - Private methods
 
 - (void)timerFired:(NSTimer *)timer {
-    if ([self.minutesOnWhichToExecute containsObject:[self.minutesAndSecondsUtility currentMinute]]) {
+    if ([self.minutesOnWhichToExecute containsObject:[self.minutesUtility nearestMinuteToNow]]) {
         [self execute];
     }
 }
