@@ -9,39 +9,22 @@
 
 NSInteger const SecondsInAMinute = 60;
 
-static NSInteger const SecondsInHalfAMinute = SecondsInAMinute/2;
+static NSTimeInterval const StartOfNextMinuteOffset = 0.02;
 
 @implementation RCRMinutesUtility
 
-- (NSNumber *)nearestMinuteToNow {
-    return [self nearestMinuteToDate:[NSDate date]];
-}
-
-- (NSNumber *)nearestMinuteToDate:(NSDate *)date {
-    NSInteger seconds = [[NSCalendar currentCalendar] components:NSSecondCalendarUnit fromDate:date].second;
+- (NSNumber *)currentMinute {
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:[NSDate date]];
     
-    NSDate *dateRoundedToNearestMinute;
-    
-    if (seconds > SecondsInHalfAMinute) {
-        dateRoundedToNearestMinute = [date dateByAddingTimeInterval:(SecondsInAMinute - seconds)];
-    }
-    else {
-        dateRoundedToNearestMinute = [date dateByAddingTimeInterval:(-seconds)];
-    }
-    
-    NSDateComponents *dateRoundedToNearestMinuteComponents = [[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:dateRoundedToNearestMinute];
-    
-    return @(dateRoundedToNearestMinuteComponents.minute);
+    return @(dateComponents.minute);
 }
 
 - (NSDate *)dateAtStartOfNextMinute {
-    return [self dateAtStartOfNextMinuteForDate:[NSDate date]];
-}
-
-- (NSDate *)dateAtStartOfNextMinuteForDate:(NSDate *)date {
-    NSTimeInterval timestamp = [date timeIntervalSince1970];
-    NSTimeInterval startOfCurrentMinute = timestamp - fmod(timestamp, 60);
-    NSTimeInterval startOfNextMinute = startOfCurrentMinute + 60;
+    NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval startOfCurrentMinute = timestamp - fmod(timestamp, SecondsInAMinute);
+    
+    // Note that we also add the additional 'NextMinuteOffset' to ensure we are definitely into the next minute, whilst also having a negligable effect on anything the user can measure (in practice the user will not see any difference between a minute starting at 0.00 and a minute starting at 0.02, which is the offset currently defined)
+    NSTimeInterval startOfNextMinute = startOfCurrentMinute + SecondsInAMinute + StartOfNextMinuteOffset;
     
     return [NSDate dateWithTimeIntervalSince1970:startOfNextMinute];
 }

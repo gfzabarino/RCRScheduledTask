@@ -62,7 +62,7 @@
 #pragma mark - Private methods
 
 - (void)timerFired:(NSTimer *)timer {
-    if ([self.minutesOnWhichToExecute containsObject:[self.minutesUtility nearestMinuteToNow]]) {
+    if ([self.minutesOnWhichToExecute containsObject:[self.minutesUtility currentMinute]]) {
         [self execute];
     }
 }

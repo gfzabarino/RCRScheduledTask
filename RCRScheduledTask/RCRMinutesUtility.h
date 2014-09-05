@@ -11,12 +11,8 @@ extern NSInteger const SecondsInAMinute;
 
 @interface RCRMinutesUtility : NSObject
 
-- (NSNumber *)nearestMinuteToNow;
-
-- (NSNumber *)nearestMinuteToDate:(NSDate *)date;
+- (NSNumber *)currentMinute;
 
 - (NSDate *)dateAtStartOfNextMinute;
-
-- (NSDate *)dateAtStartOfNextMinuteForDate:(NSDate *)date;
 
 @end
