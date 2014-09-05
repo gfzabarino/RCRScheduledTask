@@ -9,10 +9,19 @@
 
 extern NSInteger const SecondsInAMinute;
 
+/**
+ A simple class for working with minutes.
+ */
 @interface RCRMinutesUtility : NSObject
 
+/**
+ Returns the minute component of the current time.
+ */
 - (NSNumber *)currentMinute;
 
+/**
+ Returns an <tt>NSDate</tt> representing the date and time at the start of the next minute.
+ */
 - (NSDate *)dateAtStartOfNextMinute;
 
 @end
