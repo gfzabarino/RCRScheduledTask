@@ -9,11 +9,15 @@ Note that scheduled tasks only execute while your app is running in the foregrou
 
 `RCRScheduledTask` depends on Xcode 6 and higher and has been tested with iOS 7 and iOS 8.
 
+Additionally, `RCRScheduledTask` depends on [`RCRTimers`](https://github.com/robinsonrc/RCRTimers). If installing via CocoaPods you will get `RCRTimers` automatically.
+
 All code uses ARC.
 
 ## How to Use it
 
-First, add the `RCRScheduledTask` folder and code to your project.
+Firstly, if you are not installing via CocoaPods you will first need to obtain [`RCRTimers`](https://github.com/robinsonrc/RCRTimers) and add it to your project. If you are using CocoaPods this dependency will be satisfied automatically and there is nothing you need to do.
+
+Next, add the `RCRScheduledTask` folder and code to your project.
 
 Then, one way to quickly setup a scheduled task from a view controller would be as follows.
 

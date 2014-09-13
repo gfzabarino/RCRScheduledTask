@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RCRScheduledTask"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A simple facility for running scheduled, repeating tasks within an iOS app using cron-like strings for minutes."
   s.homepage         = "https://github.com/robinsonrc/RCRScheduledTask"
   s.license          = { :type => 'MIT', :file => 'LICENSE'  }
@@ -13,4 +13,6 @@ Pod::Spec.new do |s|
   s.source_files = ['RCRScheduledTask/*.{h,m}']
 
   s.frameworks = 'Foundation'
+
+  s.dependency 'RCRTimers', '~> 1.0'  
 end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6752660419C4677F00C2B002 /* RCRHourChangeTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 675265FD19C4677F00C2B002 /* RCRHourChangeTimer.m */; };
+		6752660519C4677F00C2B002 /* RCRMinuteChangeTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 675265FF19C4677F00C2B002 /* RCRMinuteChangeTimer.m */; };
+		6752660619C4677F00C2B002 /* RCRSecondChangeTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6752660119C4677F00C2B002 /* RCRSecondChangeTimer.m */; };
+		6752660719C4677F00C2B002 /* RCRTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6752660319C4677F00C2B002 /* RCRTimer.m */; };
 		67DD794719B8709000992844 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD794619B8709000992844 /* main.m */; };
 		67DD794A19B8709000992844 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD794919B8709000992844 /* AppDelegate.m */; };
 		67DD794D19B8709000992844 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD794C19B8709000992844 /* ViewController.m */; };
@@ -15,7 +19,6 @@
 		67DD796C19B870CC00992844 /* RCRScheduledTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796919B870CC00992844 /* RCRScheduledTask.m */; };
 		67DD796D19B870CC00992844 /* RCRScheduleStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */; };
 		67DD796F19B87DF200992844 /* RCRScheduleStringParserTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */; };
-		67DD797219B8FA5A00992844 /* RCRMinutesUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD797119B8FA5A00992844 /* RCRMinutesUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		675265FC19C4677F00C2B002 /* RCRHourChangeTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRHourChangeTimer.h; sourceTree = "<group>"; };
+		675265FD19C4677F00C2B002 /* RCRHourChangeTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRHourChangeTimer.m; sourceTree = "<group>"; };
+		675265FE19C4677F00C2B002 /* RCRMinuteChangeTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRMinuteChangeTimer.h; sourceTree = "<group>"; };
+		675265FF19C4677F00C2B002 /* RCRMinuteChangeTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRMinuteChangeTimer.m; sourceTree = "<group>"; };
+		6752660019C4677F00C2B002 /* RCRSecondChangeTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRSecondChangeTimer.h; sourceTree = "<group>"; };
+		6752660119C4677F00C2B002 /* RCRSecondChangeTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRSecondChangeTimer.m; sourceTree = "<group>"; };
+		6752660219C4677F00C2B002 /* RCRTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTimer.h; sourceTree = "<group>"; };
+		6752660319C4677F00C2B002 /* RCRTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTimer.m; sourceTree = "<group>"; };
 		67DD794119B8709000992844 /* RCRScheduledTaskSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCRScheduledTaskSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DD794519B8709000992844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67DD794619B8709000992844 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,8 +56,6 @@
 		67DD796A19B870CC00992844 /* RCRScheduleStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRScheduleStringParser.h; sourceTree = "<group>"; };
 		67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduleStringParser.m; sourceTree = "<group>"; };
 		67DD796E19B87DF200992844 /* RCRScheduleStringParserTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRScheduleStringParserTestCase.m; sourceTree = "<group>"; };
-		67DD797019B8FA5A00992844 /* RCRMinutesUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRMinutesUtility.h; sourceTree = "<group>"; };
-		67DD797119B8FA5A00992844 /* RCRMinutesUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRMinutesUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +76,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		675265FA19C4677F00C2B002 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				675265FB19C4677F00C2B002 /* RCRTimers */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		675265FB19C4677F00C2B002 /* RCRTimers */ = {
+			isa = PBXGroup;
+			children = (
+				675265FC19C4677F00C2B002 /* RCRHourChangeTimer.h */,
+				675265FD19C4677F00C2B002 /* RCRHourChangeTimer.m */,
+				675265FE19C4677F00C2B002 /* RCRMinuteChangeTimer.h */,
+				675265FF19C4677F00C2B002 /* RCRMinuteChangeTimer.m */,
+				6752660019C4677F00C2B002 /* RCRSecondChangeTimer.h */,
+				6752660119C4677F00C2B002 /* RCRSecondChangeTimer.m */,
+				6752660219C4677F00C2B002 /* RCRTimer.h */,
+				6752660319C4677F00C2B002 /* RCRTimer.m */,
+			);
+			path = RCRTimers;
+			sourceTree = "<group>";
+		};
 		67DD793819B8709000992844 = {
 			isa = PBXGroup;
 			children = (
 				67DD796719B870CC00992844 /* RCRScheduledTask */,
 				67DD794319B8709000992844 /* RCRScheduledTaskSample */,
 				67DD795A19B8709000992844 /* RCRScheduledTaskTests */,
+				675265FA19C4677F00C2B002 /* Libraries */,
 				67DD794219B8709000992844 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,8 +166,6 @@
 				67DD796919B870CC00992844 /* RCRScheduledTask.m */,
 				67DD796A19B870CC00992844 /* RCRScheduleStringParser.h */,
 				67DD796B19B870CC00992844 /* RCRScheduleStringParser.m */,
-				67DD797019B8FA5A00992844 /* RCRMinutesUtility.h */,
-				67DD797119B8FA5A00992844 /* RCRMinutesUtility.m */,
 			);
 			name = RCRScheduledTask;
 			path = ../RCRScheduledTask;
@@ -242,9 +273,12 @@
 				67DD796C19B870CC00992844 /* RCRScheduledTask.m in Sources */,
 				67DD794D19B8709000992844 /* ViewController.m in Sources */,
 				67DD794A19B8709000992844 /* AppDelegate.m in Sources */,
+				6752660619C4677F00C2B002 /* RCRSecondChangeTimer.m in Sources */,
 				67DD794719B8709000992844 /* main.m in Sources */,
-				67DD797219B8FA5A00992844 /* RCRMinutesUtility.m in Sources */,
+				6752660719C4677F00C2B002 /* RCRTimer.m in Sources */,
+				6752660519C4677F00C2B002 /* RCRMinuteChangeTimer.m in Sources */,
 				67DD796D19B870CC00992844 /* RCRScheduleStringParser.m in Sources */,
+				6752660419C4677F00C2B002 /* RCRHourChangeTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

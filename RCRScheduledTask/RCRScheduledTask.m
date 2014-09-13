@@ -7,7 +7,7 @@
 
 #import "RCRScheduledTask.h"
 #import "RCRScheduleStringParser.h"
-#import "RCRMinutesUtility.h"
+#import "RCRMinuteChangeTimer.h"
 
 @interface RCRScheduledTask ()
 
@@ -15,9 +15,7 @@
 
 @property (nonatomic, copy) NSOrderedSet *minutesOnWhichToExecute;
 
-@property (nonatomic, strong) RCRMinutesUtility *minutesUtility;
-
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) RCRMinuteChangeTimer *minuteChangeTimer;
 
 @end
 
@@ -33,22 +31,16 @@
         _minutesOnWhichToExecute = [[[RCRScheduleStringParser alloc] init] minutesFromScheduleString:scheduleString];
         _lastExecuted = nil;
 
-        _minutesUtility = [[RCRMinutesUtility alloc] init];
-        
-        // Next we configure our timer, telling it to first run at the beginning of the next minute, and then every 60 seconds thereafter
-        _timer = [[NSTimer alloc] initWithFireDate:[_minutesUtility dateAtStartOfNextMinute] interval:SecondsInAMinute target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-
-        // Now we start the timer by adding it to the current runloop in the default mode (this is what the scheduledTimerWithTimeInterval: convenience methods of NSTimer do)
-        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+        _minuteChangeTimer = [RCRMinuteChangeTimer timerWithBlock:^ (NSDate *firingDate) {
+            [self timerFiredWithFiringDate:firingDate];
+        }];
     }
     
     return self;
 }
 
 - (void)dealloc {
-    // Invalidate the timer and force it to nil (setting it to nil is probably not necessary in a dealloc method but we do it explicitly to cater for the unlikely event that something attempts to use it again before this class is fully deallocated)
-    [_timer invalidate];
-    _timer = nil;
+    [_minuteChangeTimer stop];
 }
 
 + (instancetype)scheduledTaskWithScheduleString:(NSString *)scheduleString block:(void (^) ())block {
@@ -61,10 +53,18 @@
 
 #pragma mark - Private methods
 
-- (void)timerFired:(NSTimer *)timer {
-    if ([self.minutesOnWhichToExecute containsObject:[self.minutesUtility currentMinute]]) {
+- (void)timerFiredWithFiringDate:(NSDate *)firingDate {
+    NSNumber *firingMinute = [self minuteForDate:firingDate];
+    
+    if ([self.minutesOnWhichToExecute containsObject:firingMinute]) {
         [self execute];
     }
+}
+
+- (NSNumber *)minuteForDate:(NSDate *)date {
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:date];
+    
+    return @(dateComponents.minute);
 }
 
 - (void)execute {
