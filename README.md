@@ -15,7 +15,7 @@ All code uses ARC.
 
 ## How to Use it
 
-Firstly, if you are not installing via CocoaPods you will first need to obtain [`RCRTimers`](https://github.com/robinsonrc/RCRTimers) and add it to your project. If you are using CocoaPods this dependency will be satisfied automatically and there is nothing you need to do.
+Firstly, if you are not installing via CocoaPods you will need to obtain [`RCRTimers`](https://github.com/robinsonrc/RCRTimers) and add it to your project. If you are using CocoaPods this dependency will be satisfied automatically and there is nothing you need to do here.
 
 Next, add the `RCRScheduledTask` folder and code to your project.
 
