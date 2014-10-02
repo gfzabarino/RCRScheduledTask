@@ -57,6 +57,10 @@ Further examples of schedule strings and full documentation comments can be foun
 
 A sample project containing several examples of scheduled tasks, along with unit tests for `RCRScheduledTask`, can be found in the `RCRScheduledTaskSample` folder.
 
+## API Docs
+
+The [latest API documentation](http://cocoadocs.org/docsets/RCRScheduledTask/) can be found on CocoaDocs.
+
 ## License
 
 MIT License (see `LICENSE` in the root of the repository).
