@@ -7,7 +7,7 @@ Note that scheduled tasks only execute while your app is running in the foregrou
 
 ## What it Depends on
 
-`RCRScheduledTask` depends on Xcode 6 and higher and has been tested with iOS 7 and iOS 8.
+`RCRScheduledTask` has been verified as working with Xcode 6.1 and iOS 8.1.
 
 Additionally, `RCRScheduledTask` depends on [`RCRTimers`](https://github.com/robinsonrc/RCRTimers). If installing via CocoaPods you will get `RCRTimers` automatically.
 
