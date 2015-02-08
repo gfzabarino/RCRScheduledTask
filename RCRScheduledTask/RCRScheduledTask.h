@@ -60,4 +60,9 @@
  */
 - (void)executeNow;
 
+/**
+ Cancels the task execution. Note that there is no way to undo this, and that a new scheduled task should be created in order to achieve the effect of 'un-cancelling' a scheduled task.
+ */
+- (void)cancel;
+
 @end

@@ -51,6 +51,10 @@
     [self execute];
 }
 
+- (void)cancel {
+    [_minuteChangeTimer stop];
+}
+
 #pragma mark - Private methods
 
 - (void)timerFiredWithFiringDate:(NSDate *)firingDate {
@@ -62,7 +66,7 @@
 }
 
 - (NSNumber *)minuteForDate:(NSDate *)date {
-    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:date];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitMinute fromDate:date];
     
     return @(dateComponents.minute);
 }
