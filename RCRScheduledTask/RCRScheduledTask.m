@@ -31,8 +31,9 @@
         _minutesOnWhichToExecute = [[[RCRScheduleStringParser alloc] init] minutesFromScheduleString:scheduleString];
         _lastExecuted = nil;
 
+        __weak typeof(self) weakSelf = self;
         _minuteChangeTimer = [RCRMinuteChangeTimer timerWithBlock:^ (NSDate *firingDate) {
-            [self timerFiredWithFiringDate:firingDate];
+            [weakSelf timerFiredWithFiringDate:firingDate];
         }];
     }
     
